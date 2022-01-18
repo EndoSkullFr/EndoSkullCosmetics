@@ -21,16 +21,15 @@ public class NickCommand implements CommandExecutor {
     	Random random = new Random();
     	 int length = 7;
     	for(int i = 0; i < length; i++) {
-    	int index = random.nextInt(alphabet.length());
-    	char randomChar = alphabet.charAt(index);
-    	sb.append(randomChar);
-    	
-    	    }
+    		int index = random.nextInt(alphabet.length());
+    		char randomChar = alphabet.charAt(index);
+    		sb.append(randomChar);
+    	}
     	
     	String randomUsername = sb.toString();
     	player.setDisplayName(randomUsername);
     	player.setCustomName(randomUsername);
-    	sender.sendMessage("§c[EndoSkull] Ton nouveau pseudo est : §e" + randomUsername);
+    	sender.sendMessage("Â§c[EndoSkull] Ton nouveau pseudo est : Â§e" + randomUsername);
 		return false;
     }
     

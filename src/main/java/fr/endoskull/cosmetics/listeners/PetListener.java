@@ -13,6 +13,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageEvent;
+import org.bukkit.event.entity.HorseJumpEvent;
 import org.bukkit.event.inventory.InventoryOpenEvent;
 import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.event.player.PlayerInteractAtEntityEvent;
@@ -21,6 +22,8 @@ import org.bukkit.event.player.PlayerQuitEvent;
 
 import java.lang.reflect.Field;
 import java.util.UUID;
+
+import javax.persistence.Entity;
 
 public class PetListener implements Listener {
 
@@ -68,6 +71,7 @@ public class PetListener implements Listener {
 
         }
     }
+    
 
     @EventHandler
     public void onJoin(PlayerJoinEvent e) {
