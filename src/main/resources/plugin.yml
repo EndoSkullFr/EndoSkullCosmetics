@@ -1,0 +1,19 @@
+name: EndoSkullCosmetics
+version: 1.0
+author: BebeDlaStreat
+main: fr.endoskull.cosmetics.Main
+commands:
+  pets:
+    permission: endoskull.pets
+    aliases: [pet]
+    permission-message: "§cVous n'avez pas le grade requis, rendez-vous sur https://store.endoskull.fr"
+  particules:
+    permission: endoskull.particles
+    aliases: [particles]
+    permission-message: "§cVous n'avez pas le grade requis, rendez-vous sur https://store.endoskull.fr"
+  cosmetics:
+    permission: endoskull.cosmetics
+    aliases: [cosmetiques]
+    permission-message: "§cVous n'avez pas le grade requis, rendez-vous sur https://store.endoskull.fr"
+  tag:
+    permission: endoskull.tag
