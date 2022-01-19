@@ -16,6 +16,7 @@ import org.bukkit.event.entity.CreatureSpawnEvent;
 public class MountManager {
     public static double maxHealth = 1.2d;
     public static float mountSpeed = 0.15f;
+    public static float villagerSpeed = 0.05f;
 
     public static void ridePig(Player player) {
         Location loc = player.getLocation();

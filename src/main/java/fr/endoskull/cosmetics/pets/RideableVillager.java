@@ -39,7 +39,7 @@ public class RideableVillager extends EntityVillager {
             }
 
             this.S = 1.0F; this.aM = this.bI() * 0.1F; if(!this.world.isClientSide)  {
-                this.k(MountManager.mountSpeed);
+                this.k(MountManager.villagerSpeed);
                 super.g(f, f1);
             }
 
