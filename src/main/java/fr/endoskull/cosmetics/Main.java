@@ -1,7 +1,6 @@
 package fr.endoskull.cosmetics;
 
 import fr.endoskull.cosmetics.commands.CosmeticsCommand;
-import fr.endoskull.cosmetics.commands.NickCommand;
 import fr.endoskull.cosmetics.commands.ParticlesCommand;
 import fr.endoskull.cosmetics.commands.PetsCommand;
 import fr.endoskull.cosmetics.commands.TagCommand;
