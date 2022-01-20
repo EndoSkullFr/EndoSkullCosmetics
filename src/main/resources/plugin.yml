@@ -3,6 +3,7 @@ version: 1.0
 author: BebeDlaStreat
 main: fr.endoskull.cosmetics.Main
 description: Plugin de cosmetiques pour EndoSkull
+website: https://endoskull.fr
 commands:
   pets:
     permission: endoskull.pets
