@@ -63,6 +63,11 @@ public class MountManager {
         World world = ((CraftWorld) loc.getWorld()).getHandle();
         make(new RideableVillager(world), player);
     }
+    public static void rideBat(Player player) {
+        Location loc = player.getLocation();
+        World world = ((CraftWorld) loc.getWorld()).getHandle();
+        make(new RideableBat(world), player);
+    }
 
     public static void make(EntityLiving nmsEntity, Player player) {
         if (!canSummonMount(player.getLocation())) {

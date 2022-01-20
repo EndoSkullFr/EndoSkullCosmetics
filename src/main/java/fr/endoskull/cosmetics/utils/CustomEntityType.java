@@ -28,6 +28,7 @@ public class CustomEntityType {
         registerEntity("Ocelot", 98, EntityOcelot.class, RideableCat.class);
         registerEntity("Rabbit", 101, EntityRabbit.class, RideableRabbit.class);
         registerEntity("Villager", 120, EntityVillager.class, RideableVillager.class);
+        registerEntity("Bat", 65, EntityBat.class, RideableBat.class);
     }
 
     public static void registerEntity(String name, int id, Class<? extends EntityInsentient> nmsClass,
