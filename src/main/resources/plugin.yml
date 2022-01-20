@@ -17,3 +17,4 @@ commands:
     permission-message: "§cVous n'avez pas le grade requis, rendez-vous sur https://store.endoskull.fr"
   tag:
     permission: endoskull.tag
+    permission-message: "§cVous n'avez pas le grade requis, rendez-vous sur https://store.endoskull.fr"
