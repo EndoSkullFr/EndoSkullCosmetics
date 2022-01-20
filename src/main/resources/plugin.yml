@@ -17,7 +17,3 @@ commands:
     permission-message: "§cVous n'avez pas le grade requis, rendez-vous sur https://store.endoskull.fr"
   tag:
     permission: endoskull.tag
-#  nick:
-#     permission: endoskull.nick
-#     aliases: [nickname]
-#     permission-message: "§cVous n'avez pas le grade requis, rendez-vous sur https://store.endoskull.fr"
