@@ -2,6 +2,7 @@ name: EndoSkullCosmetics
 version: 1.0
 author: BebeDlaStreat
 main: fr.endoskull.cosmetics.Main
+description: Plugin de cosmetiques pour EndoSkull
 commands:
   pets:
     permission: endoskull.pets
