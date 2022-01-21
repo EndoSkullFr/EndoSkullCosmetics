@@ -12,7 +12,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 public class ColorInventory extends CustomGui {
     public ColorInventory() {
-        super(2, "§cEndoSkull §8» TAG");
+        super(2, "§cEndoSkull §8» §aTAG");
         for (TagColor value : TagColor.values()) {
             setItem(value.getSlot(), new CustomItemStack(value.getSkull()).setName("§" + value.getColor() + value.getDisplayName()), player -> {
                 player.playSound(player.getLocation(), Sound.WOOD_CLICK, 1, 1);
