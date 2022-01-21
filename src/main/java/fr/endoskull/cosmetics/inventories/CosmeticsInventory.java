@@ -6,7 +6,7 @@ import org.bukkit.Material;
 
 public class CosmeticsInventory extends CustomGui {
     public CosmeticsInventory() {
-        super(3, "§dEndoSkull Cosmétiques");
+        super(3, "§cEndoSkull §8» §dCosmétiques");
         setItem(11, new CustomItemStack(Material.NAME_TAG).setName("§6Tags"), player -> {
             player.performCommand("tag");
         });

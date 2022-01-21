@@ -17,7 +17,7 @@ import java.util.UUID;
 
 public class PetInventory extends CustomGui {
     public PetInventory(UUID uuid) {
-        super(3, "§dEndoSkull Pets");
+        super(3, "§cEndoSkull §8» §6Pets");
         int i = 9;
         for (Pets value : Pets.values()) {
             setItem(i, new CustomItemStack(getSkull(value.getSkull())).setName(value.getDisplayName()), player -> {
