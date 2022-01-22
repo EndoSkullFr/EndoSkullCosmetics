@@ -118,7 +118,7 @@ public class MountManager {
         final Player p = player;
         final float f = (float) d;
         Bukkit.getScheduler().scheduleSyncRepeatingTask(Main.getInstance(), () -> {
-            if (player.getLocation().distance(entity.getLocation()) > 10) entity.teleport(player);
+            if (player.getLocation().distance(entity.getLocation()) > 1) entity.teleport(player);
 
             ((EntityInsentient) ((CraftEntity) e).getHandle()).getNavigation().a(p.getLocation().getX(), p.getLocation().getY(), p.getLocation().getZ(), f);
         }, 20, 20);

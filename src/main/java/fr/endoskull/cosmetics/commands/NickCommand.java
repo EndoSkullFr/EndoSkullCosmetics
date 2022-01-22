@@ -16,7 +16,7 @@ public class NickCommand implements CommandExecutor {
             return false;
         }
         Player player = (Player) sender;
-    	String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZazertyuiopqsdfghjklmwxcvbn123456789";
+    	String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZazertyuiopqsdfghjklmwxcvbn1234567890";
     	StringBuilder sb = new StringBuilder();
     	Random random = new Random();
     	 int length = 7;
@@ -30,7 +30,7 @@ public class NickCommand implements CommandExecutor {
     	String randomUsername = sb.toString();
     	player.setDisplayName(randomUsername);
     	player.setCustomName(randomUsername);
-    	sender.sendMessage("§c[EndoSkull] §bTon nouveau pseudo est : §e" + randomUsername);
+    	sender.sendMessage("§c[EndoSkull] §eTon nouveau pseudo est : " + randomUsername);
 		return false;
     }
     
