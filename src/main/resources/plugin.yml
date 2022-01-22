@@ -20,3 +20,6 @@ commands:
   tag:
     permission: endoskull.tag
     permission-message: "§cVous n'avez pas le grade requis, rendez-vous sur https://store.endoskull.fr"
+  nick:
+    permission: endoskull.nick
+    permission-message: "§cVous n'avez pas le grade requis, rendez-vous sur https://store.endoskull.fr"

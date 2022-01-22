@@ -1,9 +1,6 @@
 package fr.endoskull.cosmetics;
 
-import fr.endoskull.cosmetics.commands.CosmeticsCommand;
-import fr.endoskull.cosmetics.commands.ParticlesCommand;
-import fr.endoskull.cosmetics.commands.PetsCommand;
-import fr.endoskull.cosmetics.commands.TagCommand;
+import fr.endoskull.cosmetics.commands.*;
 import fr.endoskull.cosmetics.listeners.PetListener;
 import fr.endoskull.cosmetics.utils.CustomEntityType;
 import org.bukkit.Bukkit;
@@ -27,6 +24,7 @@ public class Main extends JavaPlugin {
         getCommand("particules").setExecutor(new ParticlesCommand());
         getCommand("cosmetics").setExecutor(new CosmeticsCommand());
         getCommand("tag").setExecutor(new TagCommand());
+        getCommand("nick").setExecutor(new NickCommand());
 
         PluginManager pm = Bukkit.getPluginManager();
         pm.registerEvents(new PetListener(this), this);
