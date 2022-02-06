@@ -25,6 +25,7 @@ public class Main extends JavaPlugin {
         getCommand("cosmetics").setExecutor(new CosmeticsCommand());
         getCommand("tag").setExecutor(new TagCommand());
         getCommand("nick").setExecutor(new NickCommand());
+        getCommand("music").setExecutor(new MusicCommand());
 
         PluginManager pm = Bukkit.getPluginManager();
         pm.registerEvents(new PetListener(this), this);
