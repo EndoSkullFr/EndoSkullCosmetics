@@ -27,8 +27,7 @@ public class MusicInventory extends CustomGui {
             int i = 0;
             for (String s : musicFolder.list()) {
                 Song song = NBSDecoder.parse(new File(Main.getInstance().getDataFolder(), "musics/" + s));
-                System.out.println(s);
-                setItem(i, new CustomItemStack(Material.DIRT).setName(s), player -> {
+                setItem(i, new CustomItemStack(Material.GOLD_RECORD).setName("§a" + s), player -> {
                     if (songPlayer.containsKey(player.getUniqueId())) {
                         songPlayer.get(player.getUniqueId()).destroy();
                     }
