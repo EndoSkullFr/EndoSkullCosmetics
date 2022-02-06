@@ -23,3 +23,5 @@ commands:
   nick:
     permission: endoskull.nick
     permission-message: "§cVous n'avez pas le grade requis, rendez-vous sur https://store.endoskull.fr"
+  music:
+    permission: endoskull.music
