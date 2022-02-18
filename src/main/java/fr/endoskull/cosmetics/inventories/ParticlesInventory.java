@@ -10,7 +10,7 @@ import org.bukkit.entity.Player;
 
 public class ParticlesInventory extends CustomGui {
     public ParticlesInventory(Player p) {
-        super(3, "§dEndoSkull Particules");
+        super(3, "§c§lEndoSkull §8» §d§lParticules");
         setItem(12, new CustomItemStack(Material.FIREWORK).setName("§6Choisir l'effet"), player -> {
             new ParticlesEffectInventory().open(player);
             player.playSound(player.getLocation(), Sound.WOOD_CLICK, 1, 1);

@@ -13,14 +13,18 @@ public class PetData {
 
     public void setPet(String pet) {
         if (pet == null) {
-            CacheAPI.remove("pets/" + uuid + "/type");
+            CacheAPI.set("pets/" + uuid + "/type", "null");
         } else {
             CacheAPI.set("pets/" + uuid + "/type", pet);
         }
     }
 
     public String getPet() {
-        return CacheAPI.get("pets/" + uuid + "/type");
+        if (CacheAPI.keyExist("pets/" + uuid + "/type") && !CacheAPI.get("pets/" + uuid + "/type").equalsIgnoreCase("null")) {
+            return CacheAPI.get("pets/" + uuid + "/type");
+        } else {
+            return null;
+        }
     }
 
 }
