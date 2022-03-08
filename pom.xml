@@ -38,24 +38,20 @@
         </plugins>
     </build>
 
+    <repositories>
+        <repository>
+            <id>codemc-snapshots</id>
+            <url>https://repo.codemc.io/repository/maven-snapshots/</url>
+        </repository>
+    </repositories>
+
     <dependencies>
         <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot</artifactId>
             <version>1.8.8-R0.1-SNAPSHOT</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.spigotmc</groupId>
-            <artifactId>spigot-api</artifactId>
-            <version>1.8.8-R0.1-SNAPSHOT</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.bukkit</groupId>
-            <artifactId>bukkit</artifactId>
-            <version>1.8.8-R0.1-SNAPSHOT</version>
-            <scope>provided</scope>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/libs/EndoSkullAPI-1.0-SNAPSHOT.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>fr.endoskull</groupId>
@@ -65,18 +61,10 @@
             <systemPath>${project.basedir}/libs/EndoSkullAPI-1.0-SNAPSHOT.jar</systemPath>
         </dependency>
         <dependency>
-            <groupId>anvilgui</groupId>
-            <artifactId>api</artifactId>
-            <version>1.5.0</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/libs/anvilgui-1.5.0-SNAPSHOT.jar</systemPath>
-        </dependency>
-        <dependency>
-            <groupId>anvilgui</groupId>
-            <artifactId>r3</artifactId>
-            <version>1.5.0</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/libs/anvilgui-1_8_R3-1.5.0-SNAPSHOT.jar</systemPath>
+            <groupId>net.wesjd</groupId>
+            <artifactId>anvilgui</artifactId>
+            <version>1.5.3-SNAPSHOT</version>
+            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>fr.endoskull</groupId>
