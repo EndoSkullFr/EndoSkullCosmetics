@@ -8,13 +8,13 @@ commands:
     aliases: [pet]
     permission-message: "§cVous n'avez pas le grade requis, rendez-vous sur https://store.endoskull.fr"
   particules:
-    permission: endoskull.particles
     aliases: [particles]
-    permission-message: "§cVous n'avez pas le grade requis, rendez-vous sur https://store.endoskull.fr"
   cosmetics:
-    permission: endoskull.cosmetics
     aliases: [cosmetiques]
-    permission-message: "§cVous n'avez pas le grade requis, rendez-vous sur https://store.endoskull.fr"
   tag:
     permission: endoskull.tag
+    permission-message: "§cVous n'avez pas le grade requis, rendez-vous sur https://store.endoskull.fr"
+  music:
+    aliases: [musique, musics, musiques]
+    permission: endoskull.music
     permission-message: "§cVous n'avez pas le grade requis, rendez-vous sur https://store.endoskull.fr"

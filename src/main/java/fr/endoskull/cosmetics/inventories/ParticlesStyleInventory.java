@@ -1,12 +1,5 @@
 package fr.endoskull.cosmetics.inventories;
 
-import dev.esophose.playerparticles.PlayerParticles;
-import dev.esophose.playerparticles.api.PlayerParticlesAPI;
-import dev.esophose.playerparticles.manager.ParticleStyleManager;
-import dev.esophose.playerparticles.particles.ParticleEffect;
-import dev.esophose.playerparticles.particles.ParticlePair;
-import dev.esophose.playerparticles.styles.ParticleStyle;
-import dev.esophose.playerparticles.util.ParticleUtils;
 import fr.endoskull.api.spigot.utils.CustomGui;
 import fr.endoskull.api.spigot.utils.CustomItemStack;
 import org.bukkit.Sound;
@@ -19,7 +12,7 @@ import java.util.Random;
 public class ParticlesStyleInventory extends CustomGui {
     public ParticlesStyleInventory() {
         super(6, "§c§lEndoSkull §8» §d§lParticules");
-        int i = 0;
+        /*int i = 0;
         Integer[] glassSlot = new Integer[]{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 17, 18, 26, 27, 35, 36, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53};
         for (int i1 : glassSlot) {
             setItem(i1, CustomItemStack.getPane(3).setName("§r"));
@@ -44,6 +37,6 @@ public class ParticlesStyleInventory extends CustomGui {
         setItem(53, CustomItemStack.getBackGuiItem(), player -> {
             new ParticlesInventory(player).open(player);
             player.playSound(player.getLocation(), Sound.WOOD_CLICK, 1, 1);
-        });
+        });*/
     }
 }

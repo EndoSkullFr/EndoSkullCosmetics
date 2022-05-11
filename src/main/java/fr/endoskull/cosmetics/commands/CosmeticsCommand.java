@@ -18,7 +18,7 @@ public class CosmeticsCommand implements CommandExecutor {
         }
         Player player = (Player) sender;
         new CosmeticsInventory().open(player);
-        player.playSound(player.getLocation(), Sound.WOOD_CLICK, 1, 1);
+        player.playSound(player.getLocation(), Sound.NOTE_STICKS, 1, 1);
         return false;
     }
 }

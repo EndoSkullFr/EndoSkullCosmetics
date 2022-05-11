@@ -7,14 +7,14 @@ import org.bukkit.Material;
 public class CosmeticsInventory extends CustomGui {
     public CosmeticsInventory() {
         super(3, "§c§lEndoSkull §8» §d§lCosmétiques");
-        setItem(11, new CustomItemStack(Material.NAME_TAG).setName("§6Tags"), player -> {
+        setItem(11, new CustomItemStack(Material.NAME_TAG).setName("§6Tags").setLore("\n§7Requiert le grade §bHéro"), player -> {
             player.performCommand("tag");
         });
         setItem(13, new CustomItemStack(Material.BLAZE_POWDER).setName("§6Particules"), player -> {
             player.performCommand("particles");
         });
-        setItem(15, new CustomItemStack(Material.MONSTER_EGG).setName("§6Pets"), player -> {
-            player.performCommand("pets");
+        setItem(15, new CustomItemStack(Material.GOLD_RECORD).setName("§6Musique").setLore("\n§7Requiert le grade §eVIP"), player -> {
+            player.performCommand("music");
         });
     }
 }

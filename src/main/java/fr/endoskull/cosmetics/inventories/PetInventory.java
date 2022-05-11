@@ -5,7 +5,6 @@ import com.mojang.authlib.properties.Property;
 import fr.endoskull.api.spigot.utils.CustomGui;
 import fr.endoskull.api.spigot.utils.CustomItemStack;
 import fr.endoskull.cosmetics.Main;
-import fr.endoskull.cosmetics.redis.PetData;
 import fr.endoskull.cosmetics.utils.Pets;
 import org.bukkit.Material;
 import org.bukkit.Sound;
@@ -22,14 +21,14 @@ public class PetInventory extends CustomGui {
         for (Pets value : Pets.values()) {
             setItem(i, new CustomItemStack(getSkull(value.getSkull())).setName(value.getDisplayName()), player -> {
                 value.getAction().click(player);
-                new PetData(player.getUniqueId()).setPet(value.toString());
+                //new PetData(player.getUniqueId()).setPet(value.toString());
                 player.closeInventory();
                 player.playSound(player.getLocation(), Sound.CLICK, 1f, 1f);
                 player.sendMessage("§eEndoSkull §8>> §7Vous avez fait spawn le pet " + value.getDisplayName());
             });
             i++;
         }
-        PetData petData = new PetData(uuid);
+        /*PetData petData = new PetData(uuid);
         if (petData.getPet() != null) {
             setItem(26, new CustomItemStack(Material.BARRIER).setName("§cRetirer le pet"), player -> {
                 player.closeInventory();
@@ -42,7 +41,7 @@ public class PetInventory extends CustomGui {
                     main.getPets().remove(player.getUniqueId());
                 }
             });
-        }
+        }*/
 
     }
 

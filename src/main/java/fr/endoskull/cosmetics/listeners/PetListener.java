@@ -1,7 +1,6 @@
 package fr.endoskull.cosmetics.listeners;
 
 import fr.endoskull.cosmetics.Main;
-import fr.endoskull.cosmetics.redis.PetData;
 import fr.endoskull.cosmetics.utils.Pets;
 import net.minecraft.server.v1_8_R3.EntityLiving;
 import net.minecraft.server.v1_8_R3.IMerchant;
@@ -69,7 +68,7 @@ public class PetListener implements Listener {
         }
     }
 
-    @EventHandler
+    /*@EventHandler
     public void onJoin(PlayerJoinEvent e) {
         Player player = e.getPlayer();
         PetData petData = new PetData(player.getUniqueId());
@@ -77,7 +76,7 @@ public class PetListener implements Listener {
             Pets pet = Pets.valueOf(petData.getPet());
             Bukkit.getScheduler().runTaskLater(main, () -> pet.getAction().click(player), 5L);
         }
-    }
+    }*/
 
     @EventHandler
     public void onLeave(PlayerQuitEvent e) {

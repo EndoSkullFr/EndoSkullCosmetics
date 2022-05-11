@@ -17,7 +17,6 @@ public class ParticlesCommand implements CommandExecutor {
         }
         Player player = (Player) sender;
         new ParticlesInventory(player).open(player);
-        player.playSound(player.getLocation(), Sound.WOOD_CLICK, 1, 1);
         return false;
     }
 }

@@ -28,6 +28,20 @@
       </plugin>
     </plugins>
   </build>
+  <repositories>
+    <repository>
+      <id>codemc-snapshots</id>
+      <url>https://repo.codemc.io/repository/maven-snapshots/</url>
+    </repository>
+    <repository>
+      <id>jitpack.io</id>
+      <url>https://jitpack.io</url>
+    </repository>
+    <repository>
+      <id>dmulloy2-repo</id>
+      <url>https://repo.dmulloy2.net/repository/public/</url>
+    </repository>
+  </repositories>
   <dependencies>
     <dependency>
       <groupId>org.spigotmc</groupId>
@@ -104,6 +118,12 @@
       </exclusions>
     </dependency>
     <dependency>
+      <groupId>com.github.koca2000</groupId>
+      <artifactId>NoteBlockAPI</artifactId>
+      <version>-SNAPSHOT</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
       <groupId>fr.endoskull</groupId>
       <artifactId>endoskullapi</artifactId>
       <version>1.0</version>
@@ -111,32 +131,11 @@
       <systemPath>${project.basedir}/libs/EndoSkullAPI-1.0-SNAPSHOT.jar</systemPath>
     </dependency>
     <dependency>
-      <groupId>anvilgui</groupId>
-      <artifactId>api</artifactId>
-      <version>1.5.0</version>
+      <groupId>com.comphenix.protocol</groupId>
+      <artifactId>ProtocolLib</artifactId>
+      <version>4.7.0</version>
       <scope>system</scope>
-      <systemPath>${project.basedir}/libs/anvilgui-1.5.0-SNAPSHOT.jar</systemPath>
-    </dependency>
-    <dependency>
-      <groupId>anvilgui</groupId>
-      <artifactId>r3</artifactId>
-      <version>1.5.0</version>
-      <scope>system</scope>
-      <systemPath>${project.basedir}/libs/anvilgui-1_8_R3-1.5.0-SNAPSHOT.jar</systemPath>
-    </dependency>
-    <dependency>
-      <groupId>fr.endoskull</groupId>
-      <artifactId>cacheapi</artifactId>
-      <version>0.1</version>
-      <scope>system</scope>
-      <systemPath>${project.basedir}/libs/CacheAPI-0.1-SNAPSHOT.jar</systemPath>
-    </dependency>
-    <dependency>
-      <groupId>fr.endoskull</groupId>
-      <artifactId>playerparticles</artifactId>
-      <version>7.21</version>
-      <scope>system</scope>
-      <systemPath>${project.basedir}/libs/PlayerParticles-7.21.jar</systemPath>
+      <systemPath>${project.basedir}/libs/ProtocolLib.jar</systemPath>
     </dependency>
   </dependencies>
   <properties>
