@@ -40,6 +40,7 @@ public class MusicUtils {
         rsp.addPlayer(player);
         rsp.setPlaying(true);
         rsp.setRepeatMode(RepeatMode.ALL);
+        rsp.setTick((short) music.getStartingTick());
         Main.getInstance().getSongPlayer().put(player.getUniqueId(), rsp);
         player.sendMessage("§eEndoSkull §8>> §7Musique en cours de lecture §a" + music.getName());
     }
