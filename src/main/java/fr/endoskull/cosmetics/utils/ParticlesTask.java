@@ -115,6 +115,26 @@ public class ParticlesTask extends BukkitRunnable {
                     ParticleUtils.sendRedstoneParticle(loc.clone().add(v.getX(), v.getY(), v.getZ()), player, 0.001f, 0, 0);
                 }
             }
+
+            if (particle == Particles.ANGE) {
+                int spiral = 2;
+                int angeStep = 20;
+                double modulo = step % angeStep;
+                if (modulo == 0) modulo = 1d/(angeStep*2);
+                for (int i = 0; i < spiral; i++) {
+                    for (double t = 0; t < Math.PI; t += Math.PI / 8) {
+                        float radius = 1.5f;
+                        float angle = 0f;
+                        double x = (radius * Math.sin(angle));
+                        double z = (radius * Math.cos(angle));
+                        angle += 0.1;
+                        locations.add(loc.clone().add(x, 0.05, z));
+                    }
+                }
+                for (Location location : locations) {
+                    ParticleUtils.sendParticle(EnumParticle.FLAME, location, player, 1, 0, 0, 0);
+                }
+            }
         }
         step++;
     }
