@@ -117,13 +117,13 @@ public class ParticlesTask extends BukkitRunnable {
             }
 
             if (particle == Particles.ANGE) {
-                    for (double t = 0; t < Math.PI; t += Math.PI / 8) {
+                    for (double t = 0; t < Math.PI * 2; t += Math.PI / 8) {
                         float radius = 0.5f;
                         float angle = 0f;
                         double x = (radius * MathL.sin(t));
                         double z = (radius * MathL.cos(t));
                         angle += 0.1;
-                        locations.add(loc.clone().add(x, 0.05, z));
+                        locations.add(loc.clone().add(x, 1, z));
 
                     }
                 for (Location location : locations) {
