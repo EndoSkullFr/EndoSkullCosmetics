@@ -19,7 +19,7 @@ public enum Particles {
     INFINITE_JUMP(new CustomItemStack(Material.LEATHER_BOOTS).setLeatherColor(Color.BLACK), "Tatanes ténébreuses", "Rassemblez le pouvoir mystique de ses chaussure pour débloquer l'abilité de faire des doubles sauts à l'infini", 50000),
     ANGEENFER(new ItemStack(Material.GOLD_NUGGET), "Ange de l'enfer", "Créez un cercle maléfique au dessus de vous comme si vous étiez un ange !", 2000),
     WHISP2(new ItemStack(Material.REDSTONE_TORCH_ON), "Feux follets 2.0", "Des petites flammes qui tournent au dessus de votre tête", 1000),
-    WHISP3(new ItemStack(Material.WATER_BUCKET), "Eau gravitationelle", "Des petites bulles d'eau qui tournent au dessus de votre tête", 1000);
+    CASCADE(new ItemStack(Material.WATER_BUCKET), "Cascade d'eau", "Une cascade d'eau autour de vous.", 1000);
     private ItemStack item;
     private String name;
     private String desc;
