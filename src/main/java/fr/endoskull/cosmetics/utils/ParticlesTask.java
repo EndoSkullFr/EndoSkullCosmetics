@@ -130,6 +130,7 @@ public class ParticlesTask extends BukkitRunnable {
                 }
             }
 
+
             if (particle == Particles.WHISP2) {
                 for (double t = 0; t < Math.PI * 2; t += Math.PI / 2) {
                     float radius = 0.5f;
