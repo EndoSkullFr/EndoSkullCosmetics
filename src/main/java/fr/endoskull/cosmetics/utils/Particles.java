@@ -23,6 +23,7 @@ public enum Particles {
     private String desc;
     private int price;
 
+
     Particles(ItemStack item, String name, String desc, int price) {
         this.item = item;
         this.name = name;

@@ -132,6 +132,7 @@ public class ParticlesTask extends BukkitRunnable {
             }
         }
         step++;
+
     }
 }
 
