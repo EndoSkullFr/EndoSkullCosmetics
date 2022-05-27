@@ -124,7 +124,6 @@ public class ParticlesTask extends BukkitRunnable {
                         double z = (radius * MathL.cos(t));
                         angle += 0.1;
                         locations.add(loc.clone().add(x, 2.4, z));
-
                     }
                 for (Location location : locations) {
                     ParticleUtils.sendParticle(EnumParticle.FLAME, location, player, 1, 0, 0, 0);
@@ -132,7 +131,6 @@ public class ParticlesTask extends BukkitRunnable {
             }
         }
         step++;
-
     }
 }
 
