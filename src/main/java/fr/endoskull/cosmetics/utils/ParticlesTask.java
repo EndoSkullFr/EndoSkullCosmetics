@@ -116,8 +116,8 @@ public class ParticlesTask extends BukkitRunnable {
                 }
             }
 
-            if (particle == Particles.ANGE) {
-                    for (double t = 0; t < Math.PI * 2; t += Math.PI / 8) {
+            if (particle == Particles.ANGE_ENFER) {
+                    for (double t = 0; t < Math.PI * 2; t += Math.PI / 12) {
                         float radius = 0.5f;
                         float angle = 0f;
                         double x = (radius * MathL.sin(t));
