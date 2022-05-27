@@ -139,13 +139,11 @@ public class ParticlesTask extends BukkitRunnable {
             }
 
             if (particle == Particles.WHISP3) {
-                for (int i=0; i<15;i++) {
-                    Vector v1 = VectorUtils.rotateAroundAxisY(new Vector(MathL.cos(step * Math.PI / 20)*0.7, 1.4, MathL.sin(step * Math.PI / 20)*0.7), -Math.toRadians(loc.getYaw()));
-                    Vector v2 = VectorUtils.rotateAroundAxisY(new Vector(MathL.cos(step * Math.PI / 20)*-0.7, 1.4, MathL.sin(step * Math.PI / 20)*0.7), -Math.toRadians(loc.getYaw()));
-                    ParticleUtils.sendParticle(EnumParticle.WATER_BUBBLE, loc.clone().add(v1.getX(), v1.getY() + 1, v1.getZ()), player, 1, 0, 0, 0);
-                    ParticleUtils.sendParticle(EnumParticle.WATER_BUBBLE, loc.clone().add(v2.getX(), v2.getY() + 1, v2.getZ()), player, 1, 0, 0, 0);
+                Vector v1 = VectorUtils.rotateAroundAxisY(new Vector(MathL.cos(step * Math.PI / 20)*0.7, 1.4, MathL.sin(step * Math.PI / 20)*0.7), -Math.toRadians(loc.getYaw()));
+                Vector v2 = VectorUtils.rotateAroundAxisY(new Vector(MathL.cos(step * Math.PI / 20)*-0.7, 1.4, MathL.sin(step * Math.PI / 20)*0.7), -Math.toRadians(loc.getYaw()));
+                ParticleUtils.sendParticle(EnumParticle.WATER_DROP, loc.clone().add(v1.getX(), v1.getY() + 1, v1.getZ()), player, 1, 0, 0, 0);
+                ParticleUtils.sendParticle(EnumParticle.WATER_DROP, loc.clone().add(v2.getX(), v2.getY() + 1, v2.getZ()), player, 1, 0, 0, 0);
 
-                }
             }
         }
         step++;
