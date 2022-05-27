@@ -123,7 +123,7 @@ public class ParticlesTask extends BukkitRunnable {
                         double x = (radius * MathL.sin(t));
                         double z = (radius * MathL.cos(t));
                         angle += 0.1;
-                        locations.add(loc.clone().add(x, 1, z));
+                        locations.add(loc.clone().add(x, 2.4, z));
 
                     }
                 for (Location location : locations) {
