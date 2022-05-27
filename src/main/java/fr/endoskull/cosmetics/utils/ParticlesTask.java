@@ -137,6 +137,7 @@ public class ParticlesTask extends BukkitRunnable {
                 ParticleUtils.sendParticle(EnumParticle.FLAME, loc.clone().add(v1.getX(), v1.getY() + 1, v1.getZ()), player, 1, 0, 0, 0);
                 ParticleUtils.sendParticle(EnumParticle.FLAME, loc.clone().add(v2.getX(), v2.getY() + 1, v2.getZ()), player, 1, 0, 0, 0);
             }
+
         }
         step++;
     }
