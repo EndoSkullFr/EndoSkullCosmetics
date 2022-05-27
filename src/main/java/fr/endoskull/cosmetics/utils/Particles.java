@@ -17,7 +17,8 @@ public enum Particles {
     DOUBLE_JUMP(new ItemStack(Material.TNT), "Semelles explosives", "Obtenez la capacité de faire des doubles sauts en utilisant ces chaussures à semelle explosive", 10000),
     FLY(new ItemStack(Material.FEATHER), "Ailes de feu", "Envolez vous dans le ciel avec des ailes de feu mais attention à ne pas trop vous approcher du soleil sinon vous finirez brûlé comme Icare", 50000),
     INFINITE_JUMP(new CustomItemStack(Material.LEATHER_BOOTS).setLeatherColor(Color.BLACK), "Tatanes ténébreuses", "Rassemblez le pouvoir mystique de ses chaussure pour débloquer l'abilité de faire des doubles sauts à l'infini", 50000),
-    ANGEENFER(new ItemStack(Material.GOLD_NUGGET), "Ange de l'enfer", "Créez un cercle maléfique au dessus de vous comme si vous étiez un ange !", 2000);
+    ANGEENFER(new ItemStack(Material.GOLD_NUGGET), "Ange de l'enfer", "Créez un cercle maléfique au dessus de vous comme si vous étiez un ange !", 2000),
+    WHISP2(new ItemStack(Material.REDSTONE_TORCH_ON), "Feux follets 2.0", "Deux petites flammes qui tournent au dessus de votre tête", 1000);
     private ItemStack item;
     private String name;
     private String desc;

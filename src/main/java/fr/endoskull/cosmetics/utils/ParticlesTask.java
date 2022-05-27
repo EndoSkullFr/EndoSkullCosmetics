@@ -129,6 +129,21 @@ public class ParticlesTask extends BukkitRunnable {
                     ParticleUtils.sendParticle(EnumParticle.FLAME, location, player, 1, 0, 0, 0);
                 }
             }
+
+            if (particle == Particles.WHISP2) {
+                for (double t = 0; t < Math.PI * 2; t += Math.PI / 8) {
+                    float radius = 0.5f;
+                    float angle = 0f;
+                    double x = (radius * MathL.sin(t));
+                    double z = (radius * MathL.cos(t));
+                    angle += 0.1;
+                    Vector v1 = VectorUtils.rotateAroundAxisY(new Vector(x, 0, z), -Math.toRadians(loc.getYaw()));
+                    locations.add(loc.clone().add(v1.getX(), 2.4, v1.getZ()));
+                }
+                for (Location location : locations) {
+                    ParticleUtils.sendParticle(EnumParticle.FLAME, location, player, 1, 0, 0, 0);
+                }
+            }
         }
         step++;
     }
