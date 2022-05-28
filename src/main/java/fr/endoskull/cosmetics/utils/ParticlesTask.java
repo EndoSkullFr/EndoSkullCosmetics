@@ -145,7 +145,7 @@ public class ParticlesTask extends BukkitRunnable {
             }
 
             if (particle == Particles.AMOUREUX) {
-                for (double t = 0; t < Math.PI * 2; t += Math.PI / 3) {
+                for (double t = 0; t < Math.PI * 2; t += Math.PI / 2 / 2) {
                     float radius = 0.5f;
                     float angle = 0f;
                     double x = (radius * MathL.sin(t));
