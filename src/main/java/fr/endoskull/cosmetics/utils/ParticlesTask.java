@@ -153,7 +153,6 @@ public class ParticlesTask extends BukkitRunnable {
                 }
             }
 
-
             if (particle == Particles.WHISP2) {
                 Vector v1 = VectorUtils.rotateAroundAxisY(new Vector(MathL.cos(step * Math.PI / 20)*0.7, 1.4, MathL.sin(step * Math.PI / 20)*0.7), -Math.toRadians(loc.getYaw()));
                 Vector v2 = VectorUtils.rotateAroundAxisY(new Vector(MathL.cos(step * Math.PI / 20)*-0.7, 1.4, MathL.sin(step * Math.PI / 20)*0.7), -Math.toRadians(loc.getYaw()));
