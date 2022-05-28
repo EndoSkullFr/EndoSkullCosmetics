@@ -145,7 +145,7 @@ public class ParticlesTask extends BukkitRunnable {
             }
 
             if (particle == Particles.AMOUREUX) {
-                for (double t = 0; t < Math.PI * 2; t += Math.PI / 8) {
+                for (double t = 0; t < Math.PI * 2; t += Math.PI / 2 / 2 / 2 / 2) {
                     locations.add(loc.clone().add(0, 2.4, 0));
                 }
                 for (Location location : locations) {
