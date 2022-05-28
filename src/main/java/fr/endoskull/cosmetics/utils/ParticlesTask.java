@@ -144,6 +144,20 @@ public class ParticlesTask extends BukkitRunnable {
                 }
             }
 
+            if (particle == Particles.AMOUREUX) {
+                for (double t = 0; t < Math.PI * 2; t += Math.PI / 8) {
+                    float radius = 0.5f;
+                    float angle = 0f;
+                    double x = (radius * MathL.sin(t));
+                    double z = (radius * MathL.cos(t));
+                    angle += 0.1;
+                    locations.add(loc.clone().add(x, 2.4, z));
+                }
+                for (Location location : locations) {
+                    ParticleUtils.sendParticle(EnumParticle.HEART, location, player, 1, 0, 0, 0);
+                }
+            }
+
 
             if (particle == Particles.WHISP2) {
                 Vector v1 = VectorUtils.rotateAroundAxisY(new Vector(MathL.cos(step * Math.PI / 20)*0.7, 1.4, MathL.sin(step * Math.PI / 20)*0.7), -Math.toRadians(loc.getYaw()));
