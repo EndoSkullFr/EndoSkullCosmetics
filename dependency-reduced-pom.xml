@@ -71,6 +71,13 @@
       <scope>system</scope>
       <systemPath>${project.basedir}/libs/ProtocolLib.jar</systemPath>
     </dependency>
+    <dependency>
+      <groupId>fr.bebedlastreat.endoskullnpc</groupId>
+      <artifactId>EndoSkullLobby</artifactId>
+      <version>1.0</version>
+      <scope>system</scope>
+      <systemPath>${project.basedir}/libs/EndoSkullLobby-1.0-SNAPSHOT.jar</systemPath>
+    </dependency>
   </dependencies>
   <properties>
     <maven.compiler.source>8</maven.compiler.source>

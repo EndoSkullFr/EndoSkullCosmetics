@@ -43,7 +43,7 @@ public class ParticlesInventory extends CustomGui {
             i++;
         }
 
-        if (Main.getInstance().getSongPlayer().containsKey(p.getUniqueId())) {
+        if (Main.getInstance().getParticles().containsKey(p.getUniqueId())) {
             setItem(40, new CustomItemStack(Material.REDSTONE_BLOCK).setName("§cEnlever la particule"), player -> {
                 ParticleUtils.selectParticle(player, null);
                 ParticleUtils.applyParticle(player, null);
