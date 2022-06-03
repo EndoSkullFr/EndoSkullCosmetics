@@ -36,7 +36,6 @@ public class Main extends JavaPlugin {
         getCommand("tag").setExecutor(new TagCommand());
         getCommand("music").setExecutor(new MusicCommand());
         PluginManager pm = Bukkit.getPluginManager();
-        pm.registerEvents(new PetListener(this), this);
         pm.registerEvents(new PlayerListener(), this);
         pm.registerEvents(new ParticleListener(this), this);
 

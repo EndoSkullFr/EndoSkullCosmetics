@@ -4,6 +4,8 @@ import fr.endoskull.api.commons.account.Account;
 import fr.endoskull.api.commons.account.AccountProvider;
 import fr.endoskull.api.spigot.utils.CustomGui;
 import fr.endoskull.api.spigot.utils.CustomItemStack;
+import fr.endoskull.cosmetics.Main;
+import fr.endoskull.cosmetics.utils.MusicUtils;
 import fr.endoskull.cosmetics.utils.ParticleUtils;
 import fr.endoskull.cosmetics.utils.Particles;
 import org.bukkit.Material;
@@ -39,6 +41,15 @@ public class ParticlesInventory extends CustomGui {
                 }
             }
             i++;
+        }
+
+        if (Main.getInstance().getSongPlayer().containsKey(p.getUniqueId())) {
+            setItem(40, new CustomItemStack(Material.REDSTONE_BLOCK).setName("§cEnlever la particule"), player -> {
+                ParticleUtils.selectParticle(player, null);
+                ParticleUtils.applyParticle(player, null);
+                player.sendMessage("§eEndoSkull §8>> §7Vous avez enlever la particule");
+                new ParticlesInventory(player).open(player);
+            });
         }
     }
 

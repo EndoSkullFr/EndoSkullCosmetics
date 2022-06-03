@@ -27,6 +27,7 @@ public class ParticlesTask extends BukkitRunnable {
     @Override
     public void run() {
         for (Player player : main.getParticles().keySet()) {
+            if (fr.bebedlastreat.endoskullnpc.Main.getInstance().getJumping().containsKey(player)) continue;
             Particles particle = main.getParticles().get(player);
             List<Location> locations = new ArrayList<>();
             Location loc = player.getLocation();

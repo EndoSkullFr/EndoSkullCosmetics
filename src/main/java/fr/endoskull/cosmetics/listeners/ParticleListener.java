@@ -33,6 +33,7 @@ public class ParticleListener implements Listener {
         Player player = e.getPlayer();
         if (!e.isFlying()) return;
         if (player.getVehicle() != null) return;
+        if (fr.bebedlastreat.endoskullnpc.Main.getInstance().getJumping().containsKey(player)) return;
         if (main.getParticles().get(player) == Particles.DOUBLE_JUMP) {
             e.setCancelled(true);
             player.playSound(player.getLocation(), Sound.EXPLODE, 1f, 1f);
@@ -70,6 +71,7 @@ public class ParticleListener implements Listener {
         Player player = e.getPlayer();
         if (player.getVehicle() != null) return;
         if (!main.getParticles().containsKey(player)) return;
+        if (fr.bebedlastreat.endoskullnpc.Main.getInstance().getJumping().containsKey(player)) return;
         if (main.getParticles().get(player) == Particles.DOUBLE_JUMP) {
             if (player.isOnGround()) {
                 player.setAllowFlight(true);
@@ -92,6 +94,7 @@ public class ParticleListener implements Listener {
     public void onSpeedBoots(PlayerMoveEvent e) {
         Player player = e.getPlayer();
         if (!main.getParticles().containsKey(player)) return;
+        if (fr.bebedlastreat.endoskullnpc.Main.getInstance().getJumping().containsKey(player)) return;
         if (main.getParticles().get(player) == Particles.SPEED && e.getTo().distance(e.getFrom()) > 0) {
             ParticleUtils.sendParticle(EnumParticle.FLAME, player.getLocation(), player, 1, 0, 0, 0);
         }
@@ -103,6 +106,7 @@ public class ParticleListener implements Listener {
     public void onJumpBoots(PlayerMoveEvent e) {
         Player player = e.getPlayer();
         if (!main.getParticles().containsKey(player)) return;
+        if (fr.bebedlastreat.endoskullnpc.Main.getInstance().getJumping().containsKey(player)) return;
         if (main.getParticles().get(player) == Particles.JUMP) {
             if (player.isOnGround()) {
                 jumpings.remove(player);
@@ -122,6 +126,7 @@ public class ParticleListener implements Listener {
         Player player = e.getPlayer();
         if (reactor.contains(player)) return;
         if (!main.getParticles().containsKey(player)) return;
+        if (fr.bebedlastreat.endoskullnpc.Main.getInstance().getJumping().containsKey(player)) return;
         if (main.getParticles().get(player) == Particles.REACTOR && !e.isSneaking()) {
             if (player.isOnGround()) {
                 player.setVelocity(player.getLocation().getDirection().multiply(5).setY(0.5));
