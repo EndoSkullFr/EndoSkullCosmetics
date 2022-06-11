@@ -17,11 +17,13 @@ public enum Musics {
     //OCARINA_OF_TIME(new ItemStack(Material.NOTE_BLOCK), "The Legend of Zelda: Ocarina of Time", "baby shark.nbs"),
     POKEMON(new ItemStack(Material.EGG), "Pokemon Rouge et Bleu", "Pokemon Red-Blue Title.nbs"),
     RASPUTIN(new ItemStack(Material.GOLD_INGOT), "Rasputin", "rasputin.nbs", 1050),
+    SOVIET_UNION(new ItemStack(Material.WOOD_HOE), "Soviet National Anthem URSS", "soviet_national_anthem_urss.nbs", 20),
     JOJO(new ItemStack(Material.BLAZE_POWDER), "Giorno's Theme", "jojo.nbs"),
     MII_CHANNEL(new ItemStack(Material.SKULL_ITEM, 1, (byte) 3), "Mii Channel", "mii channel.nbs"),
     NGGYU(new ItemStack(Material.ANVIL), "Never Gonna Give You Up", "nggyu.nbs"),
     PIRATES_CARAIBES(new ItemStack(Material.IRON_SWORD), "He's a Pirate", "pirates des caraibes.nbs"),
     STAR_WARS(new ItemStack(Material.BEACON, 1), "Star Wars - Dark Vador Theme", "star wars.nbs"),
+    ONE_PIECE(new ItemStack(Material.BOAT), "One Piece - We are", "une_piece_we_are.nbs"),
     TETRIS(new ItemStack(Material.WOOD_STAIRS), "Tetris", "tetris.nbs"),
     GHOSTBUSTERS(new ItemStack(Material.MONSTER_EGG, 1, (byte) 56), "Ghostbusters", "ghostbusters.nbs", 200);
 
