@@ -19,9 +19,12 @@ public class PlayerListener implements Listener {
     @EventHandler
     public void onJoin(PlayerJoinEvent e) {
         Player player = e.getPlayer();
+        Account account = AccountProvider.getAccount(player.getUniqueId());
+        if (account.getProperty("cosmetics/hideparticles", "false").equals("true")) {
+            Main.getInstance().getHidingParticles().add(player);
+        }
         Bukkit.getScheduler().runTaskLater(Main.getInstance(), () -> {
-            if (player == null) return;
-            Account account = AccountProvider.getAccount(player.getUniqueId());
+            if (player == null || !player.isOnline()) return;
             if (!account.getProperty("cosmetics/particle", "").equals("")) {
                 ParticleUtils.applyParticle(player, Particles.valueOf(account.getProperty("cosmetics/particle")));
             }
@@ -40,6 +43,7 @@ public class PlayerListener implements Listener {
             Main.getInstance().getSongPlayer().get(player.getUniqueId()).destroy();
             Main.getInstance().getSongPlayer().remove(player.getUniqueId());
         }
+        Main.getInstance().getHidingParticles().remove(player);
     }
 
 }

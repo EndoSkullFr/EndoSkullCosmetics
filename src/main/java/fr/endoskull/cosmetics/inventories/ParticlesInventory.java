@@ -21,6 +21,21 @@ public class ParticlesInventory extends CustomGui {
         for (int i : glassSlot) {
             setItem(i, CustomItemStack.getPane(3));
         }
+        setItem(4, new CustomItemStack(Material.EYE_OF_ENDER).setName(Main.getInstance().getHidingParticles().contains(p) ? "§aAfficher les particules" : "§cCacher les particules"), player -> {
+            if (Main.getInstance().getHidingParticles().contains(player)) {
+                Main.getInstance().getHidingParticles().remove(player);
+                Account account = AccountProvider.getAccount(player.getUniqueId());
+                account.setProperty("cosmetics/hideparticles", "false");
+                player.sendMessage("§eEndoSkull §8>> §7Vous verrez maintenant les particules des autres joueurs");
+                new ParticlesInventory(player).open(player);
+            } else {
+                Main.getInstance().getHidingParticles().add(player);
+                Account account = AccountProvider.getAccount(player.getUniqueId());
+                account.setProperty("cosmetics/hideparticles", "true");
+                player.sendMessage("§eEndoSkull §8>> §7Vous ne verrez plus les particules des autres joueurs");
+                new ParticlesInventory(player).open(player);
+            }
+        });
         int i = 0;
         for (Particles value : Particles.values()) {
             if (ParticleUtils.isParticleSelected(p, value)) {

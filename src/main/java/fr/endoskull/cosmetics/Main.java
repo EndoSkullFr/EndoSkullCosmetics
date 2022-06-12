@@ -16,7 +16,9 @@ import org.bukkit.entity.Player;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.UUID;
 
 public class Main extends JavaPlugin {
@@ -25,6 +27,7 @@ public class Main extends JavaPlugin {
     private final HashMap<UUID, LivingEntity> pets = new HashMap<>();
     private final HashMap<Player, Particles> particles = new HashMap<>();
     private HashMap<UUID, RadioSongPlayer> songPlayer = new HashMap<>();
+    private final List<Player> hidingParticles = new ArrayList<>();
 
     @Override
     public void onEnable() {
@@ -73,4 +76,7 @@ public class Main extends JavaPlugin {
         return songPlayer;
     }
 
+    public List<Player> getHidingParticles() {
+        return hidingParticles;
+    }
 }

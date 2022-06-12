@@ -93,6 +93,7 @@ public class ParticleUtils {
 
     public static void sendParticle(EnumParticle particle, Location location, Player player, int amount, float x, float y, float z) {
         for (Player pls : Bukkit.getOnlinePlayers()) {
+            if (Main.getInstance().getHidingParticles().contains(pls)) continue;
             if (pls.canSee(player)) {
                 PacketPlayOutWorldParticles packet = new PacketPlayOutWorldParticles(
                         particle, true, (float) location.getX(), (float) location.getY(), (float) location.getZ(), x, y, z, 0, amount);
@@ -103,6 +104,7 @@ public class ParticleUtils {
 
     public static void sendRedstoneParticle(Location location, Player player, float red, float green, float blue) {
         for (Player pls : Bukkit.getOnlinePlayers()) {
+            if (Main.getInstance().getHidingParticles().contains(pls)) continue;
             if (pls.canSee(player)) {
                 PacketPlayOutWorldParticles packet = new PacketPlayOutWorldParticles(
                         EnumParticle.REDSTONE, true, (float) location.getX(), (float) location.getY(), (float) location.getZ(), red, green, blue, 1, 0);
