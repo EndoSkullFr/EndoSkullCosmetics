@@ -2,6 +2,8 @@ name: EndoSkullCosmetics
 version: 1.0
 author: BebeDlaStreat
 main: fr.endoskull.cosmetics.Main
+depend:
+  - EndoSkullCore
 commands:
   particules:
     aliases: [particles]
