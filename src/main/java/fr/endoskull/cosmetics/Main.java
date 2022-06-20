@@ -1,6 +1,7 @@
 package fr.endoskull.cosmetics;
 
 import com.xxmicloxx.NoteBlockAPI.songplayer.RadioSongPlayer;
+import fr.endoskull.api.spigot.utils.Languages;
 import fr.endoskull.cosmetics.commands.*;
 import fr.endoskull.cosmetics.inventories.MusicInventory;
 import fr.endoskull.cosmetics.listeners.ParticleListener;
@@ -11,11 +12,14 @@ import fr.endoskull.cosmetics.utils.Musics;
 import fr.endoskull.cosmetics.utils.Particles;
 import fr.endoskull.cosmetics.utils.ParticlesTask;
 import org.bukkit.Bukkit;
+import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -33,7 +37,6 @@ public class Main extends JavaPlugin {
     public void onEnable() {
         instance = this;
 
-        getCommand("pets").setExecutor(new PetsCommand());
         getCommand("particules").setExecutor(new ParticlesCommand());
         getCommand("cosmetics").setExecutor(new CosmeticsCommand());
         getCommand("tag").setExecutor(new TagCommand());
@@ -49,6 +52,21 @@ public class Main extends JavaPlugin {
         for (Musics value : Musics.values()) {
             Main.getInstance().saveResource("musics/" + value.getFile(), false);
         }
+        for (Languages value : Languages.values()) {
+            saveResource("languages/" + value.toString().toLowerCase() + ".yml", false);
+            YamlConfiguration config = YamlConfiguration.loadConfiguration(new File(getDataFolder(), "languages/" + value.toString().toLowerCase() + ".yml"));
+            File langFile = new File(fr.endoskull.api.Main.getInstance().getDataFolder(), "languages/" + value.toString().toLowerCase() + ".yml");
+            YamlConfiguration langConfig = YamlConfiguration.loadConfiguration(langFile);
+            for (String key : config.getKeys(false)) {
+                langConfig.set(key, config.get(key));
+            }
+            try {
+                langConfig.save(langFile);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        fr.endoskull.api.Main.getInstance().reloadLangFiles();
         super.onEnable();
     }
 

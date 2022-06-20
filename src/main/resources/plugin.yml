@@ -3,18 +3,14 @@ version: 1.0
 author: BebeDlaStreat
 main: fr.endoskull.cosmetics.Main
 commands:
-  pets:
-    permission: endoskull.pets
-    aliases: [pet]
-    permission-message: "§cVous n'avez pas le grade requis, rendez-vous sur https://store.endoskull.fr"
   particules:
     aliases: [particles]
   cosmetics:
     aliases: [cosmetiques]
   tag:
     permission: endoskull.tag
-    permission-message: "§cVous n'avez pas le grade requis, rendez-vous sur https://store.endoskull.fr"
+#    permission-message: "§cVous n'avez pas le grade requis, rendez-vous sur https://store.endoskull.fr"
   music:
     aliases: [musique, musics, musiques]
     permission: endoskull.music
-    permission-message: "§cVous n'avez pas le grade requis, rendez-vous sur https://store.endoskull.fr"
+#    permission-message: "§cVous n'avez pas le grade requis, rendez-vous sur https://store.endoskull.fr"

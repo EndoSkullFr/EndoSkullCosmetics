@@ -8,6 +8,7 @@ import com.comphenix.protocol.wrappers.EnumWrappers;
 import fr.endoskull.api.commons.account.Account;
 import fr.endoskull.api.commons.account.AccountProvider;
 import fr.endoskull.api.spigot.utils.CustomItemStack;
+import fr.endoskull.api.spigot.utils.Languages;
 import fr.endoskull.cosmetics.Main;
 import net.minecraft.server.v1_8_R3.EnumParticle;
 import net.minecraft.server.v1_8_R3.PacketPlayOutWorldParticles;
@@ -45,6 +46,7 @@ public class ParticleUtils {
     }
 
     public static void applyParticle(Player player, Particles particles) {
+        Languages lang = Languages.getLang(player);
         player.setFlying(false);
         player.setAllowFlight(false);
         for (PotionEffect effect : player.getActivePotionEffects()) {
@@ -63,26 +65,26 @@ public class ParticleUtils {
         switch (particles) {
             case SPEED:
                 player.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, Integer.MAX_VALUE, 4));
-                player.getInventory().setBoots(new CustomItemStack(Material.GOLD_BOOTS).setName("§a" + Particles.SPEED.getName()).setUnbreakable());
+                player.getInventory().setBoots(new CustomItemStack(Material.GOLD_BOOTS).setName("§a" + lang.getMessage(Particles.SPEED.getName())).setUnbreakable());
                 break;
             case JUMP:
                 player.addPotionEffect(new PotionEffect(PotionEffectType.JUMP, Integer.MAX_VALUE, 4));
-                player.getInventory().setBoots(new CustomItemStack(Material.DIAMOND_BOOTS).setName("§a" + Particles.JUMP.getName()).setUnbreakable());
+                player.getInventory().setBoots(new CustomItemStack(Material.DIAMOND_BOOTS).setName("§a" + lang.getMessage(Particles.JUMP.getName())).setUnbreakable());
                 break;
             case DOUBLE_JUMP:
                 player.setAllowFlight(true);
-                player.getInventory().setBoots(new CustomItemStack(Material.LEATHER_BOOTS).setName("§a" + Particles.DOUBLE_JUMP.getName()).setUnbreakable().setLeatherColor(Color.RED));
+                player.getInventory().setBoots(new CustomItemStack(Material.LEATHER_BOOTS).setName("§a" + lang.getMessage(Particles.DOUBLE_JUMP.getName())).setUnbreakable().setLeatherColor(Color.RED));
                 break;
             case INFINITE_JUMP:
                 player.setAllowFlight(true);
-                player.getInventory().setBoots(new CustomItemStack(Material.LEATHER_BOOTS).setName("§a" + Particles.INFINITE_JUMP.getName()).setUnbreakable().setLeatherColor(Color.BLACK));
+                player.getInventory().setBoots(new CustomItemStack(Material.LEATHER_BOOTS).setName("§a" + lang.getMessage(Particles.INFINITE_JUMP.getName())).setUnbreakable().setLeatherColor(Color.BLACK));
                 break;
             case HELICOPTER:
                 player.setAllowFlight(true);
-                player.getInventory().setHelmet(new CustomItemStack(Material.LEATHER_HELMET).setName("§a" + Particles.HELICOPTER.getName()).setUnbreakable().setLeatherColor(Color.RED));
-                player.getInventory().setChestplate(new CustomItemStack(Material.LEATHER_CHESTPLATE).setName("§a" + Particles.HELICOPTER.getName()).setUnbreakable().setLeatherColor(Color.RED));
-                player.getInventory().setLeggings(new CustomItemStack(Material.LEATHER_LEGGINGS).setName("§a" + Particles.HELICOPTER.getName()).setUnbreakable().setLeatherColor(Color.RED));
-                player.getInventory().setBoots(new CustomItemStack(Material.LEATHER_BOOTS).setName("§a" + Particles.HELICOPTER.getName()).setUnbreakable().setLeatherColor(Color.BLUE));
+                player.getInventory().setHelmet(new CustomItemStack(Material.LEATHER_HELMET).setName("§a" + lang.getMessage(Particles.HELICOPTER.getName())).setUnbreakable().setLeatherColor(Color.RED));
+                player.getInventory().setChestplate(new CustomItemStack(Material.LEATHER_CHESTPLATE).setName("§a" + lang.getMessage(Particles.HELICOPTER.getName())).setUnbreakable().setLeatherColor(Color.RED));
+                player.getInventory().setLeggings(new CustomItemStack(Material.LEATHER_LEGGINGS).setName("§a" + lang.getMessage(Particles.HELICOPTER.getName())).setUnbreakable().setLeatherColor(Color.RED));
+                player.getInventory().setBoots(new CustomItemStack(Material.LEATHER_BOOTS).setName("§a" + lang.getMessage(Particles.HELICOPTER.getName())).setUnbreakable().setLeatherColor(Color.BLUE));
                 break;
             case FLY:
                 player.setAllowFlight(true);

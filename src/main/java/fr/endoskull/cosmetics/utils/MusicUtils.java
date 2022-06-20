@@ -6,6 +6,7 @@ import com.xxmicloxx.NoteBlockAPI.songplayer.RadioSongPlayer;
 import com.xxmicloxx.NoteBlockAPI.utils.NBSDecoder;
 import fr.endoskull.api.commons.account.Account;
 import fr.endoskull.api.commons.account.AccountProvider;
+import fr.endoskull.api.spigot.utils.Languages;
 import fr.endoskull.cosmetics.Main;
 import org.bukkit.entity.Player;
 
@@ -42,6 +43,6 @@ public class MusicUtils {
         rsp.setRepeatMode(RepeatMode.ALL);
         rsp.setTick((short) music.getStartingTick());
         Main.getInstance().getSongPlayer().put(player.getUniqueId(), rsp);
-        player.sendMessage("§eEndoSkull §8>> §7Musique en cours de lecture §a" + music.getName());
+        player.sendMessage(Languages.getLang(player).getMessage(CosmeticsMessage.MUSIC_PLAYING).replace("{music}", music.getName()));
     }
 }

@@ -2,18 +2,22 @@ package fr.endoskull.cosmetics.inventories;
 
 import fr.endoskull.api.spigot.utils.CustomGui;
 import fr.endoskull.api.spigot.utils.CustomItemStack;
+import fr.endoskull.api.spigot.utils.Languages;
+import fr.endoskull.cosmetics.utils.CosmeticsMessage;
 import org.bukkit.Material;
+import org.bukkit.entity.Player;
 
 public class CosmeticsInventory extends CustomGui {
-    public CosmeticsInventory() {
-        super(3, "§c§lEndoSkull §8» §d§lCosmétiques");
-        setItem(11, new CustomItemStack(Material.NAME_TAG).setName("§6Tags").setLore("\n§7Requiert le grade §bHéro"), player -> {
+    public CosmeticsInventory(Player p) {
+        super(3, Languages.getLang(p).getMessage(CosmeticsMessage.GUI_COSMETICS), p);
+        Languages lang = Languages.getLang(p);
+        setItem(11, new CustomItemStack(Material.NAME_TAG).setName(lang.getMessage(CosmeticsMessage.TAGS)).setLore(lang.getMessage(CosmeticsMessage.TAGS_DESC)), player -> {
             player.performCommand("tag");
         });
-        setItem(13, new CustomItemStack(Material.BLAZE_POWDER).setName("§6Particules"), player -> {
+        setItem(13, new CustomItemStack(Material.BLAZE_POWDER).setName(lang.getMessage(CosmeticsMessage.PARTICLES)), player -> {
             player.performCommand("particles");
         });
-        setItem(15, new CustomItemStack(Material.GOLD_RECORD).setName("§6Musique").setLore("\n§7Requiert le grade §eVIP"), player -> {
+        setItem(15, new CustomItemStack(Material.GOLD_RECORD).setName(lang.getMessage(CosmeticsMessage.MUSICS)).setLore(lang.getMessage(CosmeticsMessage.MUSICS_DESC)), player -> {
             player.performCommand("music");
         });
     }

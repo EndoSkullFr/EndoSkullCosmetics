@@ -8,11 +8,9 @@ import fr.endoskull.api.commons.account.Account;
 import fr.endoskull.api.commons.account.AccountProvider;
 import fr.endoskull.api.spigot.utils.CustomGui;
 import fr.endoskull.api.spigot.utils.CustomItemStack;
+import fr.endoskull.api.spigot.utils.Languages;
 import fr.endoskull.cosmetics.Main;
-import fr.endoskull.cosmetics.utils.MusicUtils;
-import fr.endoskull.cosmetics.utils.Musics;
-import fr.endoskull.cosmetics.utils.ParticleUtils;
-import fr.endoskull.cosmetics.utils.Particles;
+import fr.endoskull.cosmetics.utils.*;
 import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.entity.Player;
@@ -23,7 +21,8 @@ public class MusicInventory extends CustomGui {
     private static int[] glassSlot = {0, 1, 7, 8, 9, 17, 27, 35, 36, 37, 43, 44};
     private static int[] slots = {10,11,12,13,14,15,16, 19,20,21,22,23,24,25, 28,29,30,31,32,33,34};
     public MusicInventory(Player p) {
-        super(5, "§c§lEndoSkull §8» §d§lMusique");
+        super(5, Languages.getLang(p).getMessage(CosmeticsMessage.GUI_MUSICS), p);
+        Languages lang = Languages.getLang(p);
         p.playSound(p.getLocation(), Sound.WOOD_CLICK, 1, 1);
         for (int i : glassSlot) {
             setItem(i, CustomItemStack.getPane(2));
@@ -46,13 +45,13 @@ public class MusicInventory extends CustomGui {
             i++;
         }
         if (Main.getInstance().getSongPlayer().containsKey(p.getUniqueId())) {
-            setItem(40, new CustomItemStack(Material.REDSTONE_BLOCK).setName("§cArrêter la musique"), player -> {
+            setItem(40, new CustomItemStack(Material.REDSTONE_BLOCK).setName(lang.getMessage(CosmeticsMessage.STOP_MUSIC)), player -> {
                 MusicUtils.selectMusic(player, null);
                 if (Main.getInstance().getSongPlayer().containsKey(player.getUniqueId())) {
                     Main.getInstance().getSongPlayer().get(player.getUniqueId()).destroy();
                     Main.getInstance().getSongPlayer().remove(player.getUniqueId());
                 }
-                player.sendMessage("§eEndoSkull §8>> §7Vous avez enlever la musique");
+                player.sendMessage(lang.getMessage(CosmeticsMessage.YOU_STOP_MUSIC));
                 new MusicInventory(player).open(player);
             });
         }

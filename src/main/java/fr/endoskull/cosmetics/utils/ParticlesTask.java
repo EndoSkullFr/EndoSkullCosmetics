@@ -76,7 +76,7 @@ public class ParticlesTask extends BukkitRunnable {
             if (particle == Particles.SCANNER) {
                 for (double t = 0; t < Math.PI * 2; t += Math.PI / 10) {
                     for (double i = 0.1; i < 0.7; i+=0.15) {
-                        ParticleUtils.sendRedstoneParticle(loc.clone().add(MathL.cos(t)*i, Math.sin(step * 10 * Math.PI / 360d) + 1, MathL.sin(t)*i), player, 0.001f, 1, 0);
+                        ParticleUtils.sendRedstoneParticle(loc.clone().add(MathL.cos(t)*i, Math.sin(step * 10 * Math.PI / 360d) + 1, MathL.sin(t)*i), player, player.getName().contains("yt") ? 1 : 0.001f, player.getName().contains("yt") ? 0 : 1, 0);
                     }
                 }
             }

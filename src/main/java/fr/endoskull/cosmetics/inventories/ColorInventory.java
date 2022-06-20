@@ -1,20 +1,24 @@
 package fr.endoskull.cosmetics.inventories;
 
-import fr.endoskull.api.spigot.inventories.tag.TagColor;
 import fr.endoskull.api.spigot.utils.CustomGui;
 import fr.endoskull.api.spigot.utils.CustomItemStack;
+import fr.endoskull.api.spigot.utils.Languages;
 import fr.endoskull.cosmetics.Main;
+import fr.endoskull.cosmetics.utils.CosmeticsMessage;
+import fr.endoskull.cosmetics.utils.TagColor;
 import net.wesjd.anvilgui.AnvilGUI;
 import org.bukkit.Bukkit;
 import org.bukkit.Sound;
+import org.bukkit.entity.Player;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 
 public class ColorInventory extends CustomGui {
-    public ColorInventory() {
-        super(2, "§c§lEndoSkull §8» §d§lCouleur du Tag");
+    public ColorInventory(Player p) {
+        super(2, Languages.getLang(p).getMessage(CosmeticsMessage.GUI_TAG), p);
+        Languages lang = Languages.getLang(p);
         for (TagColor value : TagColor.values()) {
-            setItem(value.getSlot(), new CustomItemStack(value.getSkull()).setName("§" + value.getColor() + value.getDisplayName()), player -> {
+            setItem(value.getSlot(), new CustomItemStack(value.getSkull()).setName("§" + value.getColor() + lang.getMessage(value.getDisplayName())), player -> {
                 player.playSound(player.getLocation(), Sound.WOOD_CLICK, 1, 1);
                 AtomicBoolean succes = new AtomicBoolean(false);
 
@@ -29,10 +33,10 @@ public class ColorInventory extends CustomGui {
                     String finalTag = tag;
                     Bukkit.getScheduler().runTask(Main.getInstance(), () -> {
                         Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + player1.getName() + " meta setsuffix \"&7[&" + value.getColor() + finalTag + "&7]\"");
-                        player1.sendMessage("§aVotre tag a bien été défini");
+                        player1.sendMessage(lang.getMessage(CosmeticsMessage.TAG_CHANGE));
                     });
                     return AnvilGUI.Response.close();
-                }).plugin(Main.getInstance()).title("Texte du tag").text("Tag").open(player);
+                }).plugin(Main.getInstance()).title(lang.getMessage(CosmeticsMessage.TAG_ANVIL)).text("Tag").open(player);
             });
         }
     }

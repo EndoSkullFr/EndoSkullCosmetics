@@ -1,5 +1,7 @@
 package fr.endoskull.cosmetics.commands;
 
+import fr.endoskull.api.commons.lang.MessageUtils;
+import fr.endoskull.api.spigot.utils.Languages;
 import fr.endoskull.cosmetics.Main;
 import fr.endoskull.cosmetics.inventories.ColorInventory;
 import org.bukkit.Sound;
@@ -13,11 +15,11 @@ public class TagCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if (!(sender instanceof Player)) {
-            sender.sendMessage("§cVous devez être un joueur pour éxécuter cette commande");
+            sender.sendMessage(Languages.getLang(sender).getMessage(MessageUtils.Global.CONSOLE));
             return false;
         }
         Player player = (Player) sender;
-        new ColorInventory().open(player);
+        new ColorInventory(player).open();
         player.playSound(player.getLocation(), Sound.WOOD_CLICK, 1, 1);
         return false;
     }
