@@ -4,6 +4,7 @@ import fr.endoskull.cosmetics.Main;
 import fr.endoskull.cosmetics.utils.MathL;
 import fr.endoskull.cosmetics.utils.ParticleUtils;
 import fr.endoskull.cosmetics.utils.Particles;
+import fr.endoskull.cosmetics.utils.ParticlesTask;
 import net.minecraft.server.v1_8_R3.EnumParticle;
 import org.bukkit.Location;
 import org.bukkit.Sound;
@@ -137,10 +138,12 @@ public class ParticleListener implements Listener {
     }
 
     @EventHandler
-    public void onVelocity(PlayerVelocityEvent e) {
+    public void onVelocity(PlayerMoveEvent e) {
         Player player = e.getPlayer();
-        if (player.getName().equalsIgnoreCase("BebeDlaStreat")) {
-            player.sendMessage(e.getVelocity() + "");
+        if (e.getTo().distance(e.getFrom()) > 0) {
+            ParticlesTask.getMoving().add(player);
+        } else {
+            ParticlesTask.getMoving().remove(player);
         }
     }
 }

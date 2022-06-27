@@ -3,10 +3,7 @@ package fr.endoskull.cosmetics.listeners;
 import fr.endoskull.api.commons.account.Account;
 import fr.endoskull.api.commons.account.AccountProvider;
 import fr.endoskull.cosmetics.Main;
-import fr.endoskull.cosmetics.utils.MusicUtils;
-import fr.endoskull.cosmetics.utils.Musics;
-import fr.endoskull.cosmetics.utils.ParticleUtils;
-import fr.endoskull.cosmetics.utils.Particles;
+import fr.endoskull.cosmetics.utils.*;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -43,6 +40,7 @@ public class PlayerListener implements Listener {
             Main.getInstance().getSongPlayer().get(player.getUniqueId()).destroy();
             Main.getInstance().getSongPlayer().remove(player.getUniqueId());
         }
+        ParticlesTask.getMoving().remove(player);
         Main.getInstance().getHidingParticles().remove(player);
     }
 

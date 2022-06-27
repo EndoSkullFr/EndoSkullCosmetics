@@ -17,11 +17,17 @@ public class ParticlesTask extends BukkitRunnable {
     private Main main;
     private int step = 0;
 
+    private static final List<Player> moving = new ArrayList<>();
+
     public ParticlesTask(Main main) {
         this.main = main;
         for (Particles value : Particles.values()) {
             Bukkit.getPluginManager().addPermission(new Permission("endoskull.particles." + value.toString().toLowerCase()));
         }
+    }
+
+    public static List<Player> getMoving() {
+        return moving;
     }
 
     @Override
@@ -32,7 +38,7 @@ public class ParticlesTask extends BukkitRunnable {
             List<Location> locations = new ArrayList<>();
             Location loc = player.getLocation();
             if (particle == Particles.FLY) {
-                if (player.getVelocity().getX() != 0 || player.getVelocity().getZ() != 0) continue;
+                if (moving.contains(player)) continue;
                 for (double t = 0; t < Math.PI * 2; t += Math.PI / 48) {
                     double offset = (Math.pow(Math.E, MathL.cos(t)) - 2 * MathL.cos(t * 4) - Math.pow(MathL.sin(t / 12), 5)) / 2;
                     double x = MathL.sin(t) * offset;
