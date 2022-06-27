@@ -32,6 +32,7 @@ public class ParticlesTask extends BukkitRunnable {
             List<Location> locations = new ArrayList<>();
             Location loc = player.getLocation();
             if (particle == Particles.FLY) {
+                if (player.getVelocity().getX() > 0.1 || player.getVelocity().getZ() > 0.1) continue;
                 for (double t = 0; t < Math.PI * 2; t += Math.PI / 48) {
                     double offset = (Math.pow(Math.E, MathL.cos(t)) - 2 * MathL.cos(t * 4) - Math.pow(MathL.sin(t / 12), 5)) / 2;
                     double x = MathL.sin(t) * offset;
