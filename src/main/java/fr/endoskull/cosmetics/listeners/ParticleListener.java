@@ -13,6 +13,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.event.player.PlayerToggleFlightEvent;
 import org.bukkit.event.player.PlayerToggleSneakEvent;
+import org.bukkit.event.player.PlayerVelocityEvent;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
@@ -132,6 +133,14 @@ public class ParticleListener implements Listener {
                 player.setVelocity(player.getLocation().getDirection().multiply(5).setY(0.5));
                 player.playSound(player.getLocation(), Sound.FIREWORK_LAUNCH, 1f ,1f);
             }
+        }
+    }
+
+    @EventHandler
+    public void onVelocity(PlayerVelocityEvent e) {
+        Player player = e.getPlayer();
+        if (player.getName().equalsIgnoreCase("BebeDlaStreat")) {
+            player.sendMessage(e.getVelocity() + "");
         }
     }
 }
