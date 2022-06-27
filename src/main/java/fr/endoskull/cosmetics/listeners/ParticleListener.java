@@ -140,6 +140,7 @@ public class ParticleListener implements Listener {
     @EventHandler
     public void onVelocity(PlayerMoveEvent e) {
         Player player = e.getPlayer();
+        if (player.getName().equalsIgnoreCase("BebeDlaStreat")) player.sendMessage(e.getTo().distance(e.getFrom()) + "");
         if (e.getTo().distance(e.getFrom()) > 0.1) {
             ParticlesTask.getMoving().add(player);
         } else {
