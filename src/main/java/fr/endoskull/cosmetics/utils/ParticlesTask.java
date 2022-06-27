@@ -17,17 +17,11 @@ public class ParticlesTask extends BukkitRunnable {
     private Main main;
     private int step = 0;
 
-    private static final List<Player> moving = new ArrayList<>();
-
     public ParticlesTask(Main main) {
         this.main = main;
         for (Particles value : Particles.values()) {
             Bukkit.getPluginManager().addPermission(new Permission("endoskull.particles." + value.toString().toLowerCase()));
         }
-    }
-
-    public static List<Player> getMoving() {
-        return moving;
     }
 
     @Override
@@ -38,17 +32,15 @@ public class ParticlesTask extends BukkitRunnable {
             List<Location> locations = new ArrayList<>();
             Location loc = player.getLocation();
             if (particle == Particles.FLY) {
-                if (!moving.contains(player)) {
-                    for (double t = 0; t < Math.PI * 2; t += Math.PI / 48) {
-                        double offset = (Math.pow(Math.E, MathL.cos(t)) - 2 * MathL.cos(t * 4) - Math.pow(MathL.sin(t / 12), 5)) / 2;
-                        double x = MathL.sin(t) * offset;
-                        double y = MathL.cos(t) * offset;
-                        Vector v = VectorUtils.rotateAroundAxisY(new Vector(x, y, -0.3), -Math.toRadians(loc.getYaw()));
-                        locations.add(loc.clone().add(v.getX(), v.getY() + 1, v.getZ()));
-                    }
-                    for (Location location : locations) {
-                        ParticleUtils.sendParticle(EnumParticle.FLAME, location, player, 1, 0, 0, 0);
-                    }
+                for (double t = 0; t < Math.PI * 2; t += Math.PI / 48) {
+                    double offset = (Math.pow(Math.E, MathL.cos(t)) - 2 * MathL.cos(t * 4) - Math.pow(MathL.sin(t / 12), 5)) / 4;
+                    double x = MathL.sin(t) * offset;
+                    double y = MathL.cos(t) * offset;
+                    Vector v = VectorUtils.rotateAroundAxisY(new Vector(x, y, -0.3), -Math.toRadians(loc.getYaw()));
+                    locations.add(loc.clone().add(v.getX(), v.getY() + 1, v.getZ()));
+                }
+                for (Location location : locations) {
+                    ParticleUtils.sendParticle(EnumParticle.FLAME, location, player, 1, 0, 0, 0);
                 }
             }
             if (particle == Particles.SPIRAL) {

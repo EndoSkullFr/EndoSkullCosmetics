@@ -40,7 +40,6 @@ public class PlayerListener implements Listener {
             Main.getInstance().getSongPlayer().get(player.getUniqueId()).destroy();
             Main.getInstance().getSongPlayer().remove(player.getUniqueId());
         }
-        ParticlesTask.getMoving().remove(player);
         Main.getInstance().getHidingParticles().remove(player);
     }
 
