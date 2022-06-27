@@ -91,12 +91,8 @@ public class ParticleListener implements Listener {
             }
         }
         if (main.getParticles().get(player) == Particles.FLY ) {
-            if (player.getName().equalsIgnoreCase("BebeDlaStreat")) {
-                player.sendMessage("aaa");
-                player.sendMessage(e.getTo().distance(e.getFrom()) + "");
-            }
             if (e.getTo().distance(e.getFrom()) > 0.1) {
-                ParticlesTask.getMoving().add(player);
+                if (!ParticlesTask.getMoving().contains(player)) ParticlesTask.getMoving().add(player);
             } else {
                 ParticlesTask.getMoving().remove(player);
             }
