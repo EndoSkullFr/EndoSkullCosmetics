@@ -90,13 +90,6 @@ public class ParticleListener implements Listener {
                 trail.remove(player);
             }
         }
-        if (main.getParticles().get(player) == Particles.FLY ) {
-            if (e.getTo().distance(e.getFrom()) > 0.1) {
-                if (!ParticlesTask.getMoving().contains(player)) ParticlesTask.getMoving().add(player);
-            } else {
-                ParticlesTask.getMoving().remove(player);
-            }
-        }
     }
 
     @EventHandler
