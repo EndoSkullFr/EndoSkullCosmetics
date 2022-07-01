@@ -27,8 +27,8 @@ public class ColorInventory extends CustomGui {
                     player1.playSound(player1.getLocation(), Sound.VILLAGER_NO, 40, 40);
                 }).onComplete((player1, tag) -> {
                     succes.set(true);
-                    if (tag.length() > 3) {
-                        tag = tag.substring(0, 3);
+                    if (tag.length() > 4) {
+                        tag = tag.substring(0, 4);
                     }
                     String finalTag = tag;
                     Bukkit.getScheduler().runTask(Main.getInstance(), () -> {
